@@ -26,7 +26,6 @@
         packages = [
           keymap_drawer
 
-          zephyr.hosttools-nix
           zephyr.pythonEnv
           (zephyr.sdk.override { targets = [ "arm-zephyr-eabi" ]; })
 

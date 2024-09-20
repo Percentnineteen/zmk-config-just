@@ -26,8 +26,16 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: local
+      url-base: /Users/knick/Code/zmk/
+    - name: percentnineteen
+      url-base: https://github.com/Percentnineteen
 
   projects:
+    - name: zmk-modules
+      revision: main
+      path: modules/zmk-modules
+      remote: local
     - name: zmk-helpers
       revision: main
       path: modules/helpers
