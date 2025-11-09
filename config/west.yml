@@ -19,7 +19,7 @@
 ---
 manifest:
   defaults:
-    remote: urob
+    remote: pete
 
   remotes:
     - name: upstream
@@ -30,6 +30,10 @@ manifest:
       url-base: /Users/knick/Code/zmk/
     - name: percentnineteen
       url-base: https://github.com/Percentnineteen
+    - name: badjeff
+      url-base: https://github.com/badjeff
+    - name: pete
+      url-base: https://github.com/petejohanson
 
   projects:
     - name: zmk-modules
@@ -39,12 +43,19 @@ manifest:
     - name: zmk-helpers
       revision: main
       path: modules/helpers
-    - name: zmk-auto-layer
-      revision: main
-      path: modules/auto-layer
+      remote: urob
+        #- name: zmk-auto-layer
+        #  revision: main
+        #  path: modules/auto-layer
+        #  remote: urob
     - name: zmk-tri-state
       revision: main
       path: modules/tri-state
+      remote: urob
+    - name: zmk-pmw3610-driver
+      path: modules/pmw3610
+      remote: badjeff
+      revision: main
 
     # Add ZMK with Zephyr dependencies namespaced under /zmk. The following
     # does not work until upstream imports Zephyr with path set to anything
@@ -60,8 +71,8 @@ manifest:
     # As a workaround, we add ZMK without importing Zephyr and then manually
     # add Zephyr under the /zmk namespace and set a path other than 'zephyr'.
     - name: zmk
-      revision: going-modular
-      west-commands: scripts/west-commands.yml
+      revision: feat/pointers-move-scroll
+      import: app/west.yml
     - name: zephyr
       remote: upstream
       revision: v3.5.0+zmk-fixes
